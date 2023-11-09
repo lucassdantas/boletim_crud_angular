@@ -8,7 +8,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./view.component.css']
 })
 export class ViewComponent {
-  media:number[] = []
   student:  Student = {
     id:0,
     name: '',
@@ -20,6 +19,8 @@ export class ViewComponent {
   }
   filterName:string = ''
   filteredStudents: Student[] = []
+  media:number = 0
+  sum:number = 0
 
   constructor(
     private studentsService: StudentService,
@@ -30,11 +31,16 @@ export class ViewComponent {
   ngOnInit(): void {
     this.route.paramMap.subscribe(student => {
       let id = Number(student.get('id'))
-      this.getStudentByIdAndEdit(id)
+      this.getStudentById(id)
+      this.student.notes.forEach(note => this.sum += Number(note));
+      this.media = this.sum / this.student.notes.length;
+      console.log(this.student.notes)
+      console.log(this.sum)
     })
+
   }
-  getStudentByIdAndEdit(id:number){
-    this.studentsService.edit(id).subscribe(data => {
+  getStudentById(id:number){
+    this.studentsService.get(id).subscribe(data => {
       this.student = data
     })
   }
