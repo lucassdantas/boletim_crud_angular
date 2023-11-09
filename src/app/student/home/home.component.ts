@@ -7,18 +7,18 @@ import { StudentService } from '../student.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  
+  media:number[] = []
   allStudents: Student[] = [];
-  
   constructor(private studentService: StudentService){}
   
   ngOnInit(): void {
       this.studentService.getAll().subscribe(data => {
         this.allStudents = data
         
-        this.allStudents.forEach(student => {
-          const sum = student.notes.reduce((acc, note) => acc + note, 0);
-          student.media = sum / student.notes.length;
+        this.allStudents.forEach((student, i) => {
+          let sum = 0 
+          student.notes.forEach(note => sum += Number(note));
+          this.media[i] = sum / student.notes.length;
         });
       })
 

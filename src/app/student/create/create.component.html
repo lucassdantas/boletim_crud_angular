@@ -3,16 +3,16 @@
     <form>
         <div class="mb-3">
             <label for="name" class="form-label"></label>
-            <input type="text" name="name" id="nameInput" class="form-control">
+            <input type="text" name="name" id="nameInput" [(ngModel)] = "formData.name" class="form-control">
         </div>
         <div class="mb-3">
             <label for="note" class="form-label"></label>
-            <input type="text" name="note" id="noteInput" class="form-control">
+            <input type="text" name="note" id="noteInput" [(ngModel)] = "formData.notes[0]" class="form-control">
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label for="media" class="form-label"></label>
-            <input type="text" name="media" id="mediaInput" class="form-control">
-        </div>
-        <button type="button" class="btn btn-primary">Adicionar</button>
+            <input type="text" name="media" id="mediaInput" [(ngModel)] = "formData.media" class="form-control">
+        </div> -->
+        <button type="button" (click)='create()' class="btn btn-primary">Adicionar</button>
     </form>
 </div>

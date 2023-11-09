@@ -9,14 +9,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let student of allStudents">
+            <tr *ngFor="let student of allStudents; let i = index">
                 <th scope='row'>{{student.id}}</th>
                 <td>{{student.name}}</td>
                 <td>
                     <div *ngFor="let note of student.notes" class="studentNotes">{{note}}
                     </div>
                 </td>
-                <td>{{student.media}}</td>
+                <td>{{media[i]}}</td>
             </tr>
         </tbody>
     </table>
