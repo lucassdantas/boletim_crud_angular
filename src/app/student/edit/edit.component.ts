@@ -20,7 +20,10 @@ export class EditComponent implements OnInit {
     id:0,
     name: '',
     notes: [0,0,0,0],
-    //media: 0 
+    birthday: '',
+    photoUrl:'',
+    address:'',
+    situation:''
   }
 
   ngOnInit(): void {

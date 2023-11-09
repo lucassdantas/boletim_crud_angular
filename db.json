@@ -2,33 +2,30 @@
   "students": [
     {
       "id": 0,
-      "name": "Lucas",
-      "notes": [
-        "5",
-        "5",
-        5,
-        5
-      ]
+      "name": "João da Silva",
+      "birthday": "1990-05-15",
+      "address": "Rua Principal, 123",
+      "photo": "url_da_foto",
+      "notes": [7.5, 6.8, 8.2, 7.0],
+      "situation": "Aprovado"
     },
     {
       "id": 1,
-      "name": "Marianaaaaaaaaaaaaaa",
-      "notes": [
-        8,
-        9,
-        6,
-        8
-      ]
+      "name": "Maria Oliveira",
+      "birthday": "1992-08-22",
+      "address": "Avenida Secundária, 456",
+      "photo": "url_da_foto",
+      "notes": [8.0, 7.5, 9.1, 8.5],
+      "situation": "Aprovado"
     },
     {
       "id": 2,
-      "name": "Pedro",
-      "notes": [
-        6,
-        7,
-        8,
-        9
-      ]
+      "name": "Pedro Santos",
+      "birthday": "1995-03-10",
+      "address": "Travessa Alternativa, 789",
+      "photo": "url_da_foto",
+      "notes": [6.2, 5.5, 7.8, 6.0],
+      "situation": "Reprovado"
     }
   ]
 }

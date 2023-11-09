@@ -2,5 +2,8 @@ export interface Student {
     id:number,
     name:string,
     notes:number[],
-    //media:number
+    photoUrl:string,
+    birthday:string,
+    address:string,
+    situation:string
 }

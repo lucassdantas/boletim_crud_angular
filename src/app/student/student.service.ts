@@ -13,6 +13,9 @@ export class StudentService {
     return this.httpClient.get<Student[]>('http://localhost:3000/students')
   }
 
+  get(id:number){
+    return this.httpClient.get<Student>(`http://localhost:3000/students/${id}`)
+  }
   create(data: Student){
     return this.httpClient.post('http://localhost:3000/students', data)
   }

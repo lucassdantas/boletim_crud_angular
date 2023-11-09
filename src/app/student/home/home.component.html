@@ -1,4 +1,8 @@
 <div class="container">
+    <label for="filterName" class="form-label">Filtrar por Nome:</label>
+    <input type="text" id="filterName" [(ngModel)]="filterName" class="form-control mb-3" (input)="updateFilteredStudents()" />
+
+  
     <table class="table">
         <thead>
             <tr>
@@ -10,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let student of allStudents; let i = index">
+            <tr *ngFor="let student of filteredStudents; let i = index">
                 <th scope='row'>{{student.id}}</th>
                 <td>{{student.name}}</td>
                 <td>
@@ -19,6 +23,7 @@
                 </td>
                 <td>{{media[i]}}</td>
                 <td><a href='' class="btn btn-primary" [routerLink]="['/student/edit', student.id]">Editar</a></td>
+                <td><a href='' class="btn btn-primary" [routerLink]="['/student/view', student.id]">Ver boletim</a></td>
                 <td><button type="button" (click)="deleteStudent(student.id)" class="btn btn-danger">Remover</button></td>
             </tr>
         </tbody>

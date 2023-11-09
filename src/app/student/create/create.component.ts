@@ -14,6 +14,11 @@ export class CreateComponent {
     id:0,
     name: '',
     notes: [0,0,0,0],
+    birthday: '',
+    photoUrl:'',
+    address:'',
+    situation:''
+
     //media: 0 
   }
 
