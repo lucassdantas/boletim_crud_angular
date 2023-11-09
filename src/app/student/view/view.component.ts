@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Student } from '../student';
 import { StudentService } from '../student.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
@@ -24,8 +25,8 @@ export class ViewComponent {
 
   constructor(
     private studentsService: StudentService,
-    private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
     ){}
   
   ngOnInit(): void {
@@ -35,7 +36,9 @@ export class ViewComponent {
       
       
     })
-
+  }
+  goBack(): void {
+    this.location.back();
   }
   getStudentByIdAndSetMedia(id:number){
     this.studentsService.get(id).subscribe(data => {
