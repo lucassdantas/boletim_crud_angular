@@ -15,7 +15,14 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
       this.studentService.getAll().subscribe(data => {
         this.allStudents = data
+        this.allStudents.forEach(student => {
+          const sum = student.notes.reduce((acc, note) => acc + note, 0);
+          student.media = sum / student.notes.length;
+        });
       })
+
+     
   }
+  
 
 }

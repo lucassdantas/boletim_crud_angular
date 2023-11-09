@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './student/home/home.component';
 
 const routes: Routes = [
-  {path:'student/index', component: HomeComponent},
-  {path:'student', redirectTo: 'fruit', pathMatch: 'full'},
-  {path:'', redirectTo: 'fruit', pathMatch: 'full'}
+  {path:'student/home', component: HomeComponent},
+  {path:'student', redirectTo: 'student/home', pathMatch: 'full'},
+  {path:'', redirectTo: 'student/home', pathMatch: 'full'}
 ];
 
 @NgModule({
