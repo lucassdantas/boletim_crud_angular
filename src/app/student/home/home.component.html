@@ -1,31 +1,36 @@
 <div class="container">
-    <label for="filterName" class="form-label">Filtrar por Nome:</label>
-    <input type="text" id="filterName" [(ngModel)]="filterName" class="form-control mb-3" (input)="updateFilteredStudents()" />
-
+    <div class="mb-3">
+      <label for="filterName" class="form-label">Filtrar por Nome:</label>
+      <input type="text" id="filterName" [(ngModel)]="filterName" class="form-control" (input)="updateFilteredStudents()" />
+    </div>
   
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Notas</th>
-                <th scope="col">Média</th>
-                <th scope="col"> </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let student of filteredStudents; let i = index">
-                <th scope='row'>{{student.id}}</th>
-                <td>{{student.name}}</td>
-                <td>
-                    <div *ngFor="let note of student.notes" class="studentNotes">{{note}}
-                    </div>
-                </td>
-                <td>{{media[i]}}</td>
-                <td><a href='' class="btn btn-primary" [routerLink]="['/student/edit', student.id]">Editar</a></td>
-                <td><a href='' class="btn btn-primary" [routerLink]="['/student/view', student.id]">Ver boletim</a></td>
-                <td><button type="button" (click)="deleteStudent(student.id)" class="btn btn-danger">Remover</button></td>
-            </tr>
-        </tbody>
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Notas</th>
+          <th scope="col">Média</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of filteredStudents; let i = index">
+          <th scope='row'>{{student.id}}</th>
+          <td>{{student.name}}</td>
+          <td>
+            <div *ngFor="let note of student.notes" class="badge bg-secondary">{{note}}</div>
+          </td>
+          <td>{{media[i]}}</td>
+          <td>
+            <div class="btn-group" role="group">
+              <a class="btn btn-primary" [routerLink]="['/student/edit', student.id]">Editar</a>
+              <a class="btn btn-primary" [routerLink]="['/student/view', student.id]">Ver boletim</a>
+              <button type="button" (click)="deleteStudent(student.id)" class="btn btn-danger">Remover</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
     </table>
-</div>
+  </div>
+  
