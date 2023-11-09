@@ -19,14 +19,14 @@
           <th scope='row'>{{student.id}}</th>
           <td>{{student.name}}</td>
           <td>
-            <div *ngFor="let note of student.notes" class="badge bg-secondary">{{note}}</div>
+            <div *ngFor="let note of student.notes" class="badge bg-secondary m-1">{{note}}</div>
           </td>
           <td>{{media[i]}}</td>
           <td>
             <div class="btn-group" role="group">
-              <a class="btn btn-primary" [routerLink]="['/student/edit', student.id]">Editar</a>
-              <a class="btn btn-primary" [routerLink]="['/student/view', student.id]">Ver boletim</a>
-              <button type="button" (click)="deleteStudent(student.id)" class="btn btn-danger">Remover</button>
+              <a class="btn btn-primary m-1" [routerLink]="['/student/edit', student.id]">Editar</a>
+              <a class="btn btn-primary m-1" [routerLink]="['/student/view', student.id]">Ver boletim</a>
+              <button type="button" (click)="deleteStudent(student.id)" class="btn btn-danger m-1">Remover</button>
             </div>
           </td>
         </tr>
