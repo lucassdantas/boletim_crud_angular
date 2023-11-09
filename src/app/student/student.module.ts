@@ -8,13 +8,15 @@ import { EditComponent } from './edit/edit.component';
 
 import { FormsModule } from '@angular/forms';
 import { ViewComponent } from './view/view.component';
+import { GoBackComponent } from '../components/go-back/go-back.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     CreateComponent,
     EditComponent,
-    ViewComponent
+    ViewComponent,
+    GoBackComponent
   ],
   imports: [
     CommonModule,

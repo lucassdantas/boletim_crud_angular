@@ -46,4 +46,19 @@ export class EditComponent implements OnInit {
       error: e => console.log(e)
     })
   }
+
+  handleFileInput(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.convertToBase64(file);
+    }
+  }
+
+  convertToBase64(file: File) {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.formData.photoUrl = reader.result as string;
+    };
+  }
 }
