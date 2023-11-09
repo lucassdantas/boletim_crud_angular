@@ -25,4 +25,7 @@ export class StudentService {
     return this.httpClient.put<Student>(`http://localhost:3000/students/${data.id}`, data)
   }
 
+  delete(id:number){
+    return this.httpClient.delete<Student>(`http://localhost:3000/students/${id}`)
+  }
 }

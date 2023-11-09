@@ -19,6 +19,7 @@
                 </td>
                 <td>{{media[i]}}</td>
                 <td><a href='' class="btn btn-primary" [routerLink]="['/student/edit', student.id]">Editar</a></td>
+                <td><button type="button" (click)="deleteStudent(student.id)" class="btn btn-danger">Remover</button></td>
             </tr>
         </tbody>
     </table>

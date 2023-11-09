@@ -12,18 +12,23 @@ export class HomeComponent implements OnInit{
   constructor(private studentService: StudentService){}
   
   ngOnInit(): void {
-      this.studentService.getAll().subscribe(data => {
-        this.allStudents = data
-        
-        this.allStudents.forEach((student, i) => {
-          let sum = 0 
-          student.notes.forEach(note => sum += Number(note));
-          this.media[i] = sum / student.notes.length;
-        });
-      })
+    this.studentService.getAll().subscribe(data => {
+      this.allStudents = data
+      
+      this.allStudents.forEach((student, i) => {
+        let sum = 0 
+        student.notes.forEach(note => sum += Number(note));
+        this.media[i] = sum / student.notes.length;
+      });
+    })
+  }
 
-     
+  deleteStudent(id:number){
+    this.studentService.delete(id).subscribe({
+      next: data => {
+        this.allStudents = this.allStudents.filter(_ => _.id != id)
+      }
+    })
   }
   
-
 }
