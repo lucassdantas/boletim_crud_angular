@@ -4,8 +4,8 @@
       "id": 0,
       "name": "Lucas",
       "notes": [
-        5,
-        5,
+        "5",
+        "5",
         5,
         5
       ],
@@ -13,7 +13,7 @@
     },
     {
       "id": 1,
-      "name": "Mariana",
+      "name": "Marianaaaaaaaaaaaaaa",
       "notes": [
         8,
         9,
@@ -54,6 +54,16 @@
         0
       ],
       "media": "0"
+    },
+    {
+      "id": 5,
+      "name": "aaa",
+      "notes": [
+        "5",
+        "5",
+        "5",
+        "11"
+      ]
     }
   ]
 }
