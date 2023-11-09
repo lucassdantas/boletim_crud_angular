@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { StudentModule } from './student/student.module';
+
+
 @NgModule({
   declarations: [
     AppComponent
