@@ -31,17 +31,17 @@ export class ViewComponent {
   ngOnInit(): void {
     this.route.paramMap.subscribe(student => {
       let id = Number(student.get('id'))
-      this.getStudentById(id)
-      this.student.notes.forEach(note => this.sum += Number(note));
-      this.media = this.sum / this.student.notes.length;
-      console.log(this.student.notes)
-      console.log(this.sum)
+      this.getStudentByIdAndSetMedia(id)
+      
+      
     })
 
   }
-  getStudentById(id:number){
+  getStudentByIdAndSetMedia(id:number){
     this.studentsService.get(id).subscribe(data => {
       this.student = data
+      this.student.notes.forEach(note => this.sum += Number(note));
+      this.media = this.sum / this.student.notes.length;
     })
   }
  
