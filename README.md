@@ -1,3 +1,13 @@
+# About 
+This project is an crud developed with Angular, bootstrap and json server. 
+I did that because my teacher ask this job. 
+
+# Screenshots 
+![Alt text](home.png)
+![Alt text](add.png)
+![Alt text](edit.png)
+![Alt text](student_report.png)
+
 # Boletim
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
